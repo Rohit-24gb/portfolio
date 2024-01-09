@@ -6,11 +6,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/HeroSection';
 import Skill from './components/SkillSection';
 import Education from './components/Education';
-import Experience from './components/Experience';
+// import Experience from './components/Experience';
 // import { Router } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ImportExport } from '@mui/icons-material';
+// import { ImportExport } from '@mui/icons-material';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+// import Training_Certification from './components/Trainings';
+import Trainings from './components/Trainings';
 
 
 const Body = styled.div`
@@ -44,10 +48,12 @@ function App() {
           <Hero />
           <Wrapper>
             <Skill />
-            <Experience />
+            <Trainings/>        
             <Education />
           </Wrapper>
           <Projects />
+          <Contact />
+          <Footer />
         </Body>
       </Router>
     </ThemeProvider>

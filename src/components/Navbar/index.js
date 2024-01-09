@@ -5,6 +5,7 @@ import styled, { useTheme } from "styled-components";
 import {DiCssdeck} from "react-icons/di";
 import {FaBars} from "react-icons/fa";
 import { Link as LinkR } from "react-router-dom";
+import { Bio } from '../../data/Constants';
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.card_light};
@@ -210,8 +211,7 @@ const Navbar = () => {
           <MobileMenuLinks href='#education' onClick={() => {
             setOpen(!open)
           }}>Education</MobileMenuLinks>
-          <GithubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href="/"
-          target="_blank">Github Profile</GithubButton>
+          <GithubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href="https://github.com/Rohit-24gb" target="">Github Profile</GithubButton>
         </MobileMenu>
       }
     </NavContainer>

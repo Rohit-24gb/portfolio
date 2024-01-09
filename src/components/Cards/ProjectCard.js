@@ -124,29 +124,33 @@ const Avatar = styled.img`
 `;
 
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({ project }) => {
+    if (!project) {
+        // Handle the case where 'project' is undefined or null
+        return null;
+    }
+
     return (
         <Card>
-        <Image src = {project.image} />
-        <Tags>
-            {project.tags.map((tag) => (
-                <Tag key={tag}>{tag}</Tag>
-            ))}
-        </Tags>
-        <Details>
-        <Title>
-        {project.title}
-        </Title>
-        <Date> {project.date} </Date>
-        <Description>{project.description}</Description>
-        </Details>
-        <Members>
-        {project.member?.map((member) => (
-            <Avatar src={member.img} />
-        ))}
-        </Members>
+            <Image src={project.image} />
+            <Tags>
+                {project.tags && Array.isArray(project.tags) && project.tags.map((tag) => (
+                    <Tag key={tag}>{tag}</Tag>
+                ))}
+            </Tags>
+            <Details>
+                <Title>{project.title}</Title>
+                <Date>{project.date}</Date>
+                <Description>{project.description}</Description>
+            </Details>
+            <Members>
+                {project.member && Array.isArray(project.member) && project.member.map((member) => (
+                    <Avatar key={member.id} src={member.img} />
+                ))}
+            </Members>
         </Card>
     );
 };
+
 
 export default ProjectCard

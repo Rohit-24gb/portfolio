@@ -150,17 +150,19 @@ const Projects = () => {
 
                 <CardContainer>
                     {toggle === 'all' && projects
-                        .map((project) =>
-                            <ProjectCard project />
-                        )}
-                    {projects.filter((item) => item.category == toggle)
                         .map((project) => (
-                            <ProjectCard project={project} />
+                            <ProjectCard key={project.id} project={project} />
                         ))}
+                    {projects
+                        .filter((item) => item.category === toggle)
+                        .map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+
                 </CardContainer>
             </Wrapper>
         </Container>
-    )
-}
+    );
+};
 
 export default Projects
