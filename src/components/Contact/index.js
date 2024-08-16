@@ -72,7 +72,16 @@ const ContactTitle = styled.div`
   font-size: 24px;
   margin-bottom: 6px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
+  /* color: ${({ theme }) => theme.text_primary}; */
+  color: #cc2b61;
+`
+
+const ContactTitle1 = styled.div`
+  font-size: 20px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  /* color: ${({ theme }) => theme.text_primary}; */
+  color: grey;
 `
 
 const ContactInput = styled.input`
@@ -146,15 +155,24 @@ const Contact = () => {
       <Wrapper>
         <Title>Contact</Title>
         <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-        <ContactForm ref={form} onSubmit={handleSubmit}>
+        {/* <ContactTitle>📧 Email Me At</ContactTitle>
+        <ContactTitle1>rohitrajaksnd@gmail.com</ContactTitle1>
+
+        <ContactTitle>Where to Find Me 📍</ContactTitle>
+        <ContactTitle1>Takshshila Hostel SISTec-R</ContactTitle1>
+
+        <ContactTitle>📞 Call Me At</ContactTitle>
+        <ContactTitle1>+91 8084412448</ContactTitle1> */}
+
+        <ContactForm ref={form} action="https://formspree.io/f/xzzpvavj"  method="POST">
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
+          <ContactInput placeholder="Your Email" type='email' name="email" autoComplete='off'/>
+          <ContactInput placeholder="Your Name" name="from_name"  required autoComplete='off'/>
+          <ContactInput placeholder="Subject" name="subject" autoComplete='off'/>
+          <ContactInputMessage placeholder="Message" rows="4" name="message" autoComplete='off'/>
           <ContactButton type="submit" value="Send" />
-        </ContactForm>
-        <Snackbar
+        </ContactForm> 
+         <Snackbar
           open={open}
           autoHideDuration={6000}
           onClose={()=>setOpen(false)}

@@ -15,6 +15,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 // import Training_Certification from './components/Trainings';
 import Trainings from './components/Trainings';
+import Experience from './components/Experience';
 
 
 const Body = styled.div`
@@ -48,6 +49,7 @@ function App() {
           <Hero />
           <Wrapper>
             <Skill />
+            <Experience/>
             <Trainings/>        
             <Education />
           </Wrapper>

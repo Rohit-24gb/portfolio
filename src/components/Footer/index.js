@@ -91,8 +91,9 @@ function Footer() {
         <Logo>Rohit Kumar Rajak</Logo>
         <Nav>
           <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
+          <NavLink href="#Skills">Skills</NavLink>
+          {/* <NavLink href="#experience">Experience</NavLink> */}
+          <NavLink href="#Trainings">Training & Certification</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#education">Education</NavLink>
         </Nav>

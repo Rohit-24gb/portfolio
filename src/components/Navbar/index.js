@@ -2,8 +2,8 @@ import React from 'react'
 // import {NavLink} from "react-router-dom";
 
 import styled, { useTheme } from "styled-components";
-import {DiCssdeck} from "react-icons/di";
-import {FaBars} from "react-icons/fa";
+import { DiCssdeck } from "react-icons/di";
+import { FaBars } from "react-icons/fa";
 import { Link as LinkR } from "react-router-dom";
 import { Bio } from '../../data/Constants';
 
@@ -109,8 +109,8 @@ const GithubButton = styled.button`
     cursor: pointer;
     height: 70%;
     :hover {
-      background-color: ${({theme}) => theme.primary};
-      color: ${({theme})=>theme.white};
+      background-color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.white};
     }
 
     @media screen and (max-width :640px) {
@@ -120,13 +120,13 @@ const GithubButton = styled.button`
 
 
 
-const Span =styled.span`
+const Span = styled.span`
     padding: 0 4px;
     font-weight:bold;
     font-size:18px;
 `;
 
-const MobileMenu =styled.div`
+const MobileMenu = styled.div`
     display :flex;
     flex-direction :column;
     justify-content : center;
@@ -136,23 +136,23 @@ const MobileMenu =styled.div`
     right:0;
     width:100%;
     padding:12px 40px 24px 40px;
-    background : ${({theme}) => theme.card_light+99};
+    background : ${({ theme }) => theme.card_light + 99};
     transition :all 0.3s ease-in-out;
-    transform : ${({open})=> open ? 'translateX(0)' : 'translateX(100%)'};
+    transform : ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     border-radius: 0 0 20 20px;
     box-shadow :0 5px 10px rgba(0,0,0,0.3);
-    opacity:${({open})=> open ? '1' : '0'};
-    z-index:${({open})=> open ? '1' : '-1'};
+    opacity:${({ open }) => open ? '1' : '0'};
+    z-index:${({ open }) => open ? '1' : '-1'};
 `;
 
-const MobileMenuLinks= styled(LinkR)`
-  color :${({theme}) => theme.text_primary};
+const MobileMenuLinks = styled(LinkR)`
+  color :${({ theme }) => theme.text_primary};
   font-weight : 500;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   &:hover {
-    color :${({theme}) => theme.primary};
+    color :${({ theme }) => theme.primary};
   }
 `;
 
@@ -166,27 +166,28 @@ const Navbar = () => {
   return <Nav>
     <NavContainer>
       <NavLogo to="/">
-      <a style={{
-        display : "flex",
-        alignItems :"center",
-        color:"white",
-        marginBottom :"20",
-        cursor:"pointer"
-      }} >
-      <DiCssdeck size = "3rem"/>
-      <Span>Portfolio</Span>
-      </a>
+        <a style={{
+          display: "flex",
+          alignItems: "center",
+          color: "white",
+          marginBottom: "20",
+          cursor: "pointer"
+        }} >
+          <DiCssdeck size="3rem" />
+          <Span>Portfolio</Span>
+        </a>
       </NavLogo>
       <MobileIcon>
-        <FaBars onClick ={() =>{
+        <FaBars onClick={() => {
           setOpen(!open);
-        }} 
+        }}
         />
       </MobileIcon>
       <NavItems>
         <NavLink href='#about'>About</NavLink>
         <NavLink href='#skills'>Skills</NavLink>
-        <NavLink href='#experience'>Experience</NavLink>
+        {/* <NavLink href='#experience'>Experience</NavLink> */}
+        <NavLink href='#Trainings'>Trainings</NavLink>
         <NavLink href='#project'>Project</NavLink>
         <NavLink href='#education'>Education</NavLink>
       </NavItems>
@@ -211,11 +212,11 @@ const Navbar = () => {
           <MobileMenuLinks href='#education' onClick={() => {
             setOpen(!open)
           }}>Education</MobileMenuLinks>
-          <GithubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href="https://github.com/Rohit-24gb" target="">Github Profile</GithubButton>
+          <GithubButton style={{ padding: '10px 16px', background: `${theme.primary}`, color: 'white', width: 'max-content' }} href="https://github.com/Rohit-24gb" target="">Github Profile</GithubButton>
         </MobileMenu>
       }
     </NavContainer>
-    </Nav>
+  </Nav>
 }
 
 export default Navbar
